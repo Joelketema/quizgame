@@ -24,6 +24,15 @@ const SelectOption = () => {
                     <option value={"hard"}>Senior</option>
                 </Select>
             </Box>
+
+            <Box>
+                <Text>Pick Programming Language</Text>
+                <Select>
+                    <option value={"cpp"}>C++</option>
+                    <option value={"js"}>Javascript</option>
+                    <option value={"python"}>Python</option>
+                </Select>
+            </Box>
         </Box>
     )
     
