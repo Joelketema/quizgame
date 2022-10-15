@@ -10,7 +10,7 @@ const Typing = () => {
         flexDirection={"column"} justifyContent={"space-around"} alignItems={"center"}>
             <TitleCard text={"Speed Test"} />
             <SelectOption />
-            <CustomButton text={"Next"} url={"typing/start"} />
+            <CustomButton text={"Next"} />
     </Box>
   )
 }
