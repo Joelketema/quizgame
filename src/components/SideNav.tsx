@@ -8,32 +8,32 @@ type Props = {
 
 const SideNav = ({ text }: Props) => {
     return (
-        <Box display={"flex"} flexDirection={"column"} justifyContent={"space-around"} alignItems={"center"}
-            h={"100vh"}
+        <Box bg={"#293745"} color={"white"} display={"flex"} flexDirection={"column"} justifyContent={"space-evenly"} alignItems={"center"}
+            h={"100vh"} 
             w={"12rem"} shadow={"2xl"} p={"5%"} textAlign={"center"}>
     
-            <Box w={"100%"} textAlign={"center"} >
+            <Box w={"100%"} textAlign={"center"}  >
                 <Link to={"/"} style={{textAlign:"center"}}>
                     <Image src={"logo.png"} boxSize={"70px"} marginLeft={"25%"} />
                 </Link>
             </Box>
 
-            <Box w={"100%"}>
+            <Box w={"100%"} bg={"#B3000B"} p={"5%"} rounded={"lg"}>
             <Link to={"typing"} style={{width:"100%"}}>
                     <Text>{text}</Text>
             </Link>
             </Box>
 
 
-            <Box w={"100%"}>
+            <Box w={"100%"} _hover={{backgroundColor:"#B3000B"}}  p={"5%"} rounded={"lg"}>
                 <Text>Maze Games</Text>
             </Box>
 
-            <Box w={"100%"}>
+            <Box w={"100%"} _hover={{backgroundColor:"#B3000B"}}  p={"5%"} rounded={"lg"}>
                 <Text>Maze Games</Text>
             </Box>
 
-            <Box w={"100%"}>
+            <Box w={"100%"} _hover={{backgroundColor:"#B3000B"}}  p={"5%"} rounded={"lg"}>
                 <Text>Maze Games</Text>
             </Box>
         </Box>

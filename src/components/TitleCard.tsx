@@ -7,7 +7,7 @@ type Props = {
 const TitleCard = ({text}:Props) => {
   return (
       <Box>
-          <Text fontSize={"2rem"}>{text}</Text>
+          <Text fontSize={"2rem"} color={"white"}>{text}</Text>
     </Box>
   )
 }
