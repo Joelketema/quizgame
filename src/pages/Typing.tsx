@@ -11,7 +11,7 @@ const Typing = () => {
     const [next,setNext] = useState(false)
     
     return (
-        <Box  w={"86vw"} position={"absolute"} top={0}bg={"#293745"} pt={"5"} right={0} h={"100vh"} display={"flex"}
+        <Box  w={"86vw"}  position={"absolute"} top={0}bg={"#293745"} pt={"5"} right={0} h={"100vh"} display={"flex"}
         flexDirection={"column"} justifyContent={"space-around"} alignItems={"center"}>
             <TitleCard text={"Speed Test"} />
             {
