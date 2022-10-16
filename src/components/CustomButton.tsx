@@ -3,7 +3,7 @@ import { Button } from '@chakra-ui/react'
 
 type Props = {
     text: string,
-    url?:string
+    url:string
 }
 const CustomButton = ({ text, url }: Props) => {
     
