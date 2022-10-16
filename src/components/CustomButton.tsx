@@ -9,7 +9,7 @@ const CustomButton = ({ text, url }: Props) => {
     
     const navigate = useNavigate()
     const handleClick = (): void => {
-        navigate("auth")
+        navigate(url)
     }
     return (
         <Button onClick={handleClick} bg={"#FFBF00"} minWidth={"200px"} _hover={{backgroundColor:"#ff8300",color:"white"}}>
