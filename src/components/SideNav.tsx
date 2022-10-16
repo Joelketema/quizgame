@@ -3,14 +3,14 @@ import { useState, useEffect } from "react"
 import {Link} from "react-router-dom"
 
 type Props = {
-    text:String
+    text:string
 }
 
 const SideNav = ({ text }: Props) => {
     return (
-        <Box bg={"#293745"} color={"white"} display={"flex"} flexDirection={"column"} justifyContent={"space-evenly"} alignItems={"center"}
+        <Box bg={"#293745"} color={"white"} display={"flex"} overflow={"hidden"} flexDirection={"column"} justifyContent={"space-evenly"} alignItems={"center"}
             h={"100vh"} 
-            w={"12rem"} shadow={"2xl"} p={"5%"} textAlign={"center"}>
+            w={"12rem"} shadow={"2xl"} p={"5%"} textAlign={"center"} zIndex={4}>
     
             <Box w={"100%"} textAlign={"center"}  >
                 <Link to={"/"} style={{textAlign:"center"}}>

@@ -1,16 +1,25 @@
 import React from 'react'
-import { Box,Text } from '@chakra-ui/react'
+import { Box,Text,Button } from '@chakra-ui/react'
 import TitleCard from '../components/TitleCard'
 import { Select } from '@chakra-ui/react'
 import CustomButton from '../components/CustomButton'
+import Game from '../components/Game'
+import { useState } from "react"
 
 const Typing = () => {
+
+    const [next,setNext] = useState(false)
+    
     return (
-        <Box  w={"85vw"} position={"absolute"} top={0}bg={"#293745"} pt={"5"} right={0} h={"100vh"} display={"flex"}
+        <Box  w={"86vw"} position={"absolute"} top={0}bg={"#293745"} pt={"5"} right={0} h={"100vh"} display={"flex"}
         flexDirection={"column"} justifyContent={"space-around"} alignItems={"center"}>
             <TitleCard text={"Speed Test"} />
-            <SelectOption />
-            <CustomButton text={"Next"} />
+            {
+                next ?  <Game/> : <SelectOption />
+            } 
+            <Button onClick={()=>setNext(!next)} bg={"#FFBF00"} minWidth={"200px"} _hover={{backgroundColor:"#ff8300",color:"white"}}>
+            {next ? "Back" : "Next"}
+            </Button>
     </Box>
   )
 }
@@ -40,5 +49,7 @@ const SelectOption = () => {
     )
     
 }
+
+
 
 export default Typing
