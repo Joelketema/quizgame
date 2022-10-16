@@ -10,7 +10,7 @@ const SideNav = ({ text }: Props) => {
     return (
         <Box bg={"#293745"} color={"white"} display={"flex"} overflow={"hidden"} flexDirection={"column"} justifyContent={"space-evenly"} alignItems={"center"}
             h={"100vh"} 
-            w={"12rem"} shadow={"2xl"} p={"5%"} textAlign={"center"} zIndex={4}>
+            w={{base:"12rem",md:"12rem",lg:"12rem",xl:"12rem","2xl":"20rem"}} shadow={"2xl"} p={"5%"} textAlign={"center"} zIndex={4}>
     
             <Box w={"100%"} textAlign={"center"}  >
                 <Link to={"/"} style={{textAlign:"center"}}>

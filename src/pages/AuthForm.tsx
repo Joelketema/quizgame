@@ -75,7 +75,7 @@ function Login({ setHaveAccount } : {setHaveAccount:Function}) {
         <Box display={"flex"} justifyContent={"center"} alignItems={"center"} textAlign={'center'} 
         w={"100%"}
             flexDirection={"row"}
-            shadow={"md"} 
+            
             mt={50}
         >
             <Box w={"fit-content"} justifyContent={"center"} gap={2} alignItems={"center"} display={"flex"} flexDirection={"column"} bg={"white"} h={"80%"} p={10} rounded={"lg"}>
@@ -96,7 +96,7 @@ function Signup({ setHaveAccount } : {setHaveAccount:Function}) {
         <Box display={"flex"} justifyContent={"center"} alignItems={"center"} textAlign={'center'}
         w={"100%"}
             flexDirection={"row"}
-            shadow={"md"} 
+          
             mt={50}
         >
             <Box w={"fit-content"}  bg={"white"} h={"80%"} p={10} alignSelf={"center"}  rounded={"lg"}>
