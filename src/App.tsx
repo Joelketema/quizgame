@@ -8,7 +8,7 @@ import TopHeader from './components/TopHeader'
 import Typing from './pages/Typing'
 import Home from './pages/Home'
 import AuthForm from "./pages/AuthForm"
-import { useEffect } from "react"
+import { LevelProvider } from "./context/LevelContext"
 
 function App() {
     
@@ -22,7 +22,7 @@ function App() {
     }
     else {
       return (
-        <>
+        <LevelProvider>
           <Box bg={"white"}>
             <Router>
               <TopHeader />
@@ -35,7 +35,7 @@ function App() {
   
             </Router>
           </Box>
-        </>
+        </LevelProvider>
       )
     }
   
