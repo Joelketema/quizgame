@@ -6,6 +6,7 @@ import CustomButton from '../components/CustomButton'
 import Game from '../components/Game'
 import { useState,useContext } from "react"
 import { LevelContext } from "../context/LevelContext";
+import toast from "react-hot-toast"
 
 const Typing = () => {
 
@@ -26,8 +27,10 @@ const Typing = () => {
                 "level": level,
                 "lang": lang
                 })
+                setNext(true)
             }
-           setNext(true)
+            else toast.error("Please Pick Level and Language")
+           
         }
         else setNext(false)
         

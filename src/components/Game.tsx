@@ -46,14 +46,14 @@ const Game = () => {
             </Box>
 
            
-      <Compiler setLoading={setLoading} loading={loading} />
+      <Compiler setLoading={setLoading} loading={loading} auth={auth} />
                
            
         </Box>
   )
 }
 
-const Compiler = ({ setLoading,loading } :{setLoading:Function,loading:boolean}) => {
+const Compiler = ({ setLoading,loading,auth } :{setLoading:Function,loading:boolean,auth:{level:string,lang:string}}) => {
   var [load, setLoad] = useState<number>(0)
 
 
@@ -80,20 +80,7 @@ const Compiler = ({ setLoading,loading } :{setLoading:Function,loading:boolean})
           </CircularProgress>
           :
         <>
-        <Text>Text goes here</Text>
-            <Text>Text goes here</Text>
-            <Text>Text goes here</Text>
-            <Text>Text goes here</Text>
-            <Text>Text goes here</Text>
-            <Text>Text goes here</Text>
-            <Text>Text goes here</Text>
-            <Text>Text goes here</Text>
-            <Text>Text goes here</Text>
-            <Text>Text goes here</Text>
-            <Text>Text goes here</Text>
-            <Text>Text goes here</Text>
-            <Text>Text goes here</Text>
-            <Text>Text goes here</Text>
+            <Text>{auth.lang}</Text>
           </>
         }
         </Box>

@@ -9,6 +9,7 @@ import Typing from './pages/Typing'
 import Home from './pages/Home'
 import AuthForm from "./pages/AuthForm"
 import { LevelProvider } from "./context/LevelContext"
+import {Toaster} from "react-hot-toast"
 
 function App() {
     
@@ -24,6 +25,22 @@ function App() {
       return (
         <LevelProvider>
           <Box bg={"white"}>
+          <Toaster
+                        toastOptions={{
+                            success: {
+                                style: {
+                                    background: 'green',
+                                    color:"white"
+                                },
+                              },
+                              error: {
+                                style: {
+                                      background: 'red',
+                                      color:"white"
+                                },
+                              },
+                                }}
+                    />
             <Router>
               <TopHeader />
               <SideNav text={"Speed Test"} />

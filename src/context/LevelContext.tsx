@@ -4,20 +4,16 @@ import { useState,createContext } from "react"
 type contextProps = {
     children:React.ReactNode
 }
-interface authType {
-    level?: string,
-    lang?:string
-}
-  
+
 interface IState {
-    auth: any;
-    setAuth: React.Dispatch<React.SetStateAction<object>>;
+    auth: {level:string,lang:string};
+    setAuth: React.Dispatch<React.SetStateAction<{level:string,lang:string}>>;
 }
   
 export const LevelContext = createContext<IState>({auth:{"level" : "","lang" :""},setAuth:()=>{}})
  
 export const LevelProvider = ({ children }: contextProps) => {
-    const [auth, setAuth] = useState<object|authType>({
+    const [auth, setAuth] = useState<{level:string,lang:string}>({
         "level": "",
         "lang":""
     })
