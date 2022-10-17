@@ -9,8 +9,13 @@ const CustomButton = ({ text, url }: Props) => {
     
     const navigate = useNavigate()
     const handleClick = (): void => {
-        if (url === "back") navigate(-1)
-        else navigate(url)
+        if (url === "back") {
+            localStorage.removeItem("next")
+            localStorage.removeItem("auth")
+            navigate(-1)
+        }
+        else  navigate(url)
+        
     }
     return (
         <Button onClick={handleClick} bg={"#FFBF00"} minWidth={"200px"} _hover={{backgroundColor:"#ff8300",color:"white"}}>

@@ -10,7 +10,7 @@ import toast from "react-hot-toast"
 
 const Typing = () => {
 
-    const [next,setNext] = useState(false)
+    const [next,setNext] = useState<number>(Number(localStorage.getItem("next")) | 0)
     const [level,setLevel] = useState<string>("")
     const [lang, setLang] = useState<string>("")
     
@@ -21,29 +21,35 @@ const Typing = () => {
         console.log((event.target as Element).innerHTML)
 
         if ((event.target as Element).innerHTML === "Next") {     
-            console.log("HERE")
+           
             if (level !== "" && lang !== "") {
                 setAuth({
                 "level": level,
                 "lang": lang
                 })
-                setNext(true)
+               
+                setNext(1)
+                localStorage.setItem("next","1")
             }
             else toast.error("Please Pick Level and Language")
            
         }
-        else setNext(false)
+        else {
+            setNext(0)
+            localStorage.setItem("next","0")
+        }
         
     }
+    console.log(next)
     return (
         <Box  w={"86vw"}  position={"absolute"} top={0}bg={"#293745"} pt={"5"} right={0} h={"100vh"} display={"flex"}
         flexDirection={"column"} justifyContent={"space-around"} alignItems={"center"}>
             <TitleCard text={"Speed Test"} />
             {
-                next ? <Game /> : <SelectOption setLang={setLang} setLevel={setLevel} level={level} lang={lang} />
+                next ===1 ? <Game /> : <SelectOption setLang={setLang} setLevel={setLevel} level={level} lang={lang} />
             } 
             <Button onClick={handleNext} bg={"#FFBF00"} minWidth={"200px"} _hover={{backgroundColor:"#ff8300",color:"white"}}>
-            {next ? "Back" : "Next"}
+            {next===1 ? "Back" : "Next"}
             </Button> 
     </Box>
   )

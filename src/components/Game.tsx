@@ -13,7 +13,14 @@ const Game = () => {
   const { auth, setAuth } = secure
 
   console.log(auth)
+
+  useEffect(() => {
+    localStorage.setItem("auth",JSON.stringify(auth))
+  },[])
   
+ 
+  var gameOverSound = new Audio('/gameover.mp3');
+
   const Completionist = () => {
     return(
       <Text fontSize={"2xl"} color={"#B3000B"} fontWeight={"bold"}>Time is Up!</Text>
@@ -22,7 +29,7 @@ const Game = () => {
 
   const renderer = ({ hours, minutes, seconds, completed } : {hours:number,minutes:number,seconds:number,completed:boolean}) => {
     if (completed) {
-      
+      gameOverSound.play()
       return <Completionist />;
     } else {
       
@@ -30,6 +37,10 @@ const Game = () => {
     }
   };
   
+  const handleRestart = ():void => {
+    setLoading(true)
+    
+  }
   return (
     <Box display={"flex"}
         flexDirection={"column"} justifyContent={"space-between"} marginTop={{base:0,"2xl":-250}} mb={{base:5}} alignItems={"center"} w={"80%"} shadow={"2xl"} rounded={"3xl"} color={"white"}  h={{base:"50%","2xl":"10%"}} bg={"#0DA3D6"}>
@@ -40,7 +51,7 @@ const Game = () => {
           date={auth.level === "easy" ? Date.now() + 10000 : auth.level === "medium" ? Date.now() + 5000 : auth.level==="hard" ? Date.now() + 3000 : 0}
           renderer={renderer}
         />}
-        <Button onClick={()=>console.log('clicked')} bg={"#FFBF00"} minWidth={"200px"} _hover={{backgroundColor:"#ff8300",color:"white"}}>
+        <Button onClick={handleRestart} bg={"#FFBF00"} minWidth={"200px"} _hover={{backgroundColor:"#ff8300",color:"white"}}>
             Restart
         </Button>
             </Box>
@@ -66,7 +77,7 @@ const Compiler = ({ setLoading,loading,auth } :{setLoading:Function,loading:bool
 
     setInterval(() => {
       if (load >75) {
-        load = 5
+        setLoad(0)
         setLoading(false)
       }
     }, 10)
