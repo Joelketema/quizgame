@@ -8,6 +8,8 @@ import { LevelContext } from "../context/LevelContext";
 
 const Game = () => {
   const [loading, setLoading] = useState<boolean>(true)
+  const [showStats, setShowStats] = useState<boolean>(false)
+  
   const secure = useContext(LevelContext)
 
   const { auth, setAuth } = secure
@@ -98,4 +100,14 @@ const Compiler = ({ setLoading,loading,auth } :{setLoading:Function,loading:bool
     )
 }
 
+const Status = () => {
+  
+  return (
+    <Box bg={"white"} color="black" w={"100%"} textAlign={"center"}  minHeight={"300px"} maxHeight={"300px"} overflowY={"auto"}>
+            
+        <Text>your status</Text>
+ 
+    </Box>
+  )
+}
 export default Game
