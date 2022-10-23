@@ -3,10 +3,11 @@ import { useState, useEffect } from "react"
 import {Link} from "react-router-dom"
 
 type Props = {
-    text:string
-}
-
-const SideNav = ({ text }: Props) => {
+    text: string,
+    url:string
+}[]
+    const SideNav = ({menus}:{menus:Props}) => {
+        console.log(menus)
     return (
         <Box bg={"#293745"} color={"white"} display={"flex"} overflow={"hidden"} flexDirection={"column"} justifyContent={"space-evenly"} alignItems={"center"}
             h={"100vh"} 
@@ -18,23 +19,20 @@ const SideNav = ({ text }: Props) => {
                 </Link>
             </Box>
 
-            <Box w={"100%"} bg={"#B3000B"} p={"5%"} rounded={"lg"}>
-            <Link to={"typing"} style={{width:"100%"}}>
-                    <Text>{text}</Text>
-            </Link>
-            </Box>
-
-
-            <Box w={"100%"} _hover={{backgroundColor:"#B3000B"}}  p={"5%"} rounded={"lg"}>
-                <Text>Maze Games</Text>
-            </Box>
-
-            <Box w={"100%"} _hover={{backgroundColor:"#B3000B"}}  p={"5%"} rounded={"lg"}>
-                <Text>Maze Games</Text>
-            </Box>
-
-            <Box w={"100%"} _hover={{backgroundColor:"#B3000B"}}  p={"5%"} rounded={"lg"}>
-                <Text>Maze Games</Text>
+            {
+                menus.map(menu => {
+                    return (
+                        <Box w={"100%"} _hover={{bg:"#B3000B"}} p={"5%"} rounded={"lg"} key={menu.text}>
+                        <Link to={menu.url} style={{width:"100%"}}>
+                                <Text>{menu.text}</Text>
+                        </Link>
+                        </Box> 
+                    )
+                })
+            }
+            <Box w={"100%"} fontSize={"small"}>
+                <Text>Made By Black Tecnologies  </Text>
+                <Text>@{new Date().getFullYear()}</Text>
             </Box>
         </Box>
     )

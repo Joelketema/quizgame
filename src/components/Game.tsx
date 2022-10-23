@@ -7,7 +7,7 @@ import { LevelContext } from "../context/LevelContext";
 
 
 const Game = () => {
-  const [loading, setLoading] = useState<boolean>(true)
+  const [loading, setLoading] = useState<boolean>(false)
   const [showStats, setShowStats] = useState<boolean>(false)
   
   const secure = useContext(LevelContext)
@@ -47,7 +47,7 @@ const Game = () => {
     <Box display={"flex"}
         flexDirection={"column"} justifyContent={"space-between"} marginTop={{base:0,"2xl":-250}} mb={{base:5}} alignItems={"center"} w={"80%"} shadow={"2xl"} rounded={"3xl"} color={"white"}  h={{base:"50%","2xl":"10%"}} bg={"#0DA3D6"}>
           <Box display={"flex"} justifyContent={"space-between"} p={"1%"}  alignItems={"center"} w={"85%"}>
-        <CustomButton text={"Home"} url={"back"} />
+        <CustomButton text={"Home"} url={"/"} />
         {!loading && <Countdown
           
           date={auth.level === "easy" ? Date.now() + 10000 : auth.level === "medium" ? Date.now() + 5000 : auth.level==="hard" ? Date.now() + 3000 : 0}

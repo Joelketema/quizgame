@@ -9,12 +9,12 @@ const CustomButton = ({ text, url }: Props) => {
     
     const navigate = useNavigate()
     const handleClick = (): void => {
-        if (url === "back") {
+        if (url === "/") {
             localStorage.removeItem("next")
             localStorage.removeItem("auth")
-            navigate(-1)
+            navigate(url)
         }
-        else  navigate(url)
+        else navigate(url)
         
     }
     return (
